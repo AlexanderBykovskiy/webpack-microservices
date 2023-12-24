@@ -27,6 +27,5 @@ export const getPlugins = (options: typeWebpackConfigOptions) => {
 
     }
 
-
     return plugins;
 }

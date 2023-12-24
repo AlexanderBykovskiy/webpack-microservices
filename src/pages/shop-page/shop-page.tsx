@@ -1,8 +1,17 @@
 import React from "react";
+import pngImage from "@/shared/images/comp.png";
+import jpgImage from "@/shared/images/comp.jpg";
+import Svg from "@/shared/images/comp.svg";
 
 const ShopPage: React.FC = () => {
     return(
-        <div>Shop</div>
+        <div>
+            <div>Shop</div>
+            <div><img src={pngImage} alt=""/></div>
+            <div><img src={jpgImage} alt=""/></div>
+            <div><Svg width={250}/></div>
+            <div>Shop</div>
+        </div>
     )
 }
 

@@ -4,7 +4,26 @@ import {typeWebpackConfigOptions} from "./types";
 
 export const getLoaders = (options: typeWebpackConfigOptions) => {
 
-    const scssLoader: webpack.RuleSetRule = {
+    // Assets
+    const assetLoader: webpack.RuleSetRule = {
+        test: /\.(png|jpg|gif|woff|woff2)$/i,
+        type: 'asset/resource',
+
+    };
+
+    // SVG
+    const svgLoader: webpack.RuleSetRule = {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: [
+            {
+                loader: '@svgr/webpack',
+            }
+        ],
+    }
+
+    // Styles
+    const styleLoader: webpack.RuleSetRule = {
         test: /\.s[ac]ss$/i,
         use: [
             options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
@@ -19,18 +38,21 @@ export const getLoaders = (options: typeWebpackConfigOptions) => {
             },
             "sass-loader",
         ],
-    }
+    };
 
+    // TypeScript
     const tsLoader: webpack.RuleSetRule = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-    }
+    };
 
     const loaders: webpack.ModuleOptions['rules'] = [
-        scssLoader,
+        svgLoader,
+        assetLoader,
+        styleLoader,
         tsLoader,
-    ]
+    ];
 
     return loaders;
 }
