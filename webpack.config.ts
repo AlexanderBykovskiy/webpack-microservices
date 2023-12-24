@@ -22,6 +22,7 @@ export default (env: typeEnv) => {
             static: path.join(__dirname, 'public'),
         },
         isDev: isDev,
+        analyzer: !!env.analyzer,
     };
 
     return webpackConfig(webpackConfigOptions);

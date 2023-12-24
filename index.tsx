@@ -1,6 +1,11 @@
 import { createRoot } from 'react-dom/client';
-import {Test} from "./src/shared/ui/test-component/test";
 import React from "react";
+import { RouterProvider } from './src/app/providers';
 
 const root = createRoot(document.getElementById('root'));
-root.render(<Test/>);
+
+root.render(
+    <React.StrictMode>
+        <RouterProvider/>
+    </React.StrictMode>
+);
