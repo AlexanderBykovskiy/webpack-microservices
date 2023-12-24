@@ -1,6 +1,4 @@
-import type {Configuration as DevServerConfiguration} from "webpack-dev-server";
-import path from "node:path";
-import webpack, {Configuration} from "webpack";
+import webpack from "webpack";
 import {getDevServerConfig} from "./dev-server.config";
 import {getLoaders} from "./loaders";
 import {getPlugins} from "./plugins";
@@ -9,7 +7,7 @@ import {typeWebpackConfigOptions} from "./types";
 
 export const webpackConfig = (options: typeWebpackConfigOptions) => {
 
-    const config: Configuration = {
+    const config: webpack.Configuration = {
         mode: options.isDev ? "development" : "production",
         entry: options.paths.entry,
         output: {
