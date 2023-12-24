@@ -2,11 +2,15 @@ import {webpackConfig} from "./config/webpack/webpack.config";
 import {typeEnv, typeWebpackConfigOptions} from "./config/webpack/types";
 import path from "node:path";
 
+const DEFAULT_PORT = 3000;
+
 export default (env: typeEnv) => {
+
+    if (!(env.mode === "development" || env.mode === "production")) console.warn("* Invalid mode parameter. The build in production mode.");
 
     const isDev = env.mode === "development";
 
-    const port = Number(env.port) ? Number(env.port) : 3000;
+    const port = Number(env.port) ? Number(env.port) : DEFAULT_PORT;
 
     const webpackConfigOptions: typeWebpackConfigOptions = {
         mode: isDev ? "development" : "production",

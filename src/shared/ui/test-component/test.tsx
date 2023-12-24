@@ -1,14 +1,14 @@
 import React, {useState} from "react";
-import './style.scss';
+import classes from './style.module.scss';
 
 export const Test: React.FC = () => {
 
     const [counter, setCounter] = useState(0);
 
     return (
-        <div className="wrapper">
+        <div className={classes.wrapper}>
             <div>Test</div>
-            <button className="button" onClick={() => setCounter(counter + 1)}>{counter}</button>
+            <button className={classes.button} onClick={() => setCounter(counter + 1)}>{counter}</button>
         </div>
     )
 }
