@@ -13,6 +13,7 @@ export const getDevServerConfig = (options: typeWebpackConfigOptions) => {
         port: options.port,
         open: true,
         historyApiFallback: true,
+        hot: true,
     }
     return devServer;
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogPage: React.FC = () => {
     return(
-        <div>Blog</div>
+        <div>Blog my</div>
     )
 }
 

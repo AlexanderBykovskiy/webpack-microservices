@@ -4,6 +4,7 @@ import webpack from "webpack";
 import {typeWebpackConfigOptions} from "./types";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 export const getPlugins = (options: typeWebpackConfigOptions) => {
 
@@ -27,6 +28,8 @@ export const getPlugins = (options: typeWebpackConfigOptions) => {
         plugins.push(new webpack.ProgressPlugin());
 
         plugins.push(new ForkTsCheckerWebpackPlugin());
+
+        plugins.push(new ReactRefreshWebpackPlugin())
 
     }
 
