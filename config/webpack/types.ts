@@ -8,7 +8,8 @@ export interface typeWebpackConfigPaths {
     entry: string,
     output: string,
     static: string,
-    html: string
+    html: string,
+    resource: string,
 }
 
 export interface typeWebpackConfigOptions {
