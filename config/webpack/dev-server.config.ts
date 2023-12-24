@@ -12,6 +12,7 @@ export const getDevServerConfig = (options: typeWebpackConfigOptions) => {
         compress: true,
         port: options.port,
         open: true,
+        historyApiFallback: true,
     }
     return devServer;
 }

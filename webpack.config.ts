@@ -20,8 +20,10 @@ export default (env: typeEnv) => {
             output: path.resolve(__dirname, "dist"),
             html: path.resolve(__dirname, 'public', 'index.html'),
             static: path.join(__dirname, 'public'),
+            resource: path.join(__dirname, 'src'),
         },
         isDev: isDev,
+        analyzer: !!env.analyzer,
     };
 
     return webpackConfig(webpackConfigOptions);

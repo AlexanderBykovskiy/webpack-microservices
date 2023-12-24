@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import classes from './style.module.scss';
+import {Outlet} from "react-router-dom";
 
 export const Test: React.FC = () => {
 
@@ -9,6 +10,7 @@ export const Test: React.FC = () => {
         <div className={classes.wrapper}>
             <div>Test</div>
             <button className={classes.button} onClick={() => setCounter(counter + 1)}>{counter}</button>
+            <Outlet/>
         </div>
     )
 }

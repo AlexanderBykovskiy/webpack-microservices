@@ -21,7 +21,7 @@ export const webpackConfig = (options: typeWebpackConfigOptions) => {
         module: {
             rules: getLoaders(options),
         },
-        resolve: getResolvers(),
+        resolve: getResolvers(options),
     }
 
     if (options.isDev) {

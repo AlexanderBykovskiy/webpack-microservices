@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import {typeWebpackConfigOptions} from "./types";
+import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 
 export const getPlugins = (options: typeWebpackConfigOptions) => {
 
@@ -15,6 +16,8 @@ export const getPlugins = (options: typeWebpackConfigOptions) => {
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
         }));
+
+        if (options.analyzer) plugins.push(new BundleAnalyzerPlugin());
 
     }
 

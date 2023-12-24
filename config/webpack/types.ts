@@ -1,13 +1,15 @@
 export interface typeEnv {
     mode: string,
     port: number,
+    analyzer: boolean
 }
 
 export interface typeWebpackConfigPaths {
     entry: string,
     output: string,
     static: string,
-    html: string
+    html: string,
+    resource: string,
 }
 
 export interface typeWebpackConfigOptions {
@@ -15,4 +17,5 @@ export interface typeWebpackConfigOptions {
     mode: string,
     paths: typeWebpackConfigPaths,
     isDev: boolean,
+    analyzer: boolean,
 }

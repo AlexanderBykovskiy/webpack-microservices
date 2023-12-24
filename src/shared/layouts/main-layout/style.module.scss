@@ -1,0 +1,24 @@
+.mainWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .navigation {
+        flex-grow: 1;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
