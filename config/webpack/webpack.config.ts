@@ -13,6 +13,7 @@ export const webpackConfig = (options: typeWebpackConfigOptions) => {
         output: {
             filename: "[name].[contenthash].js",
             path: options.paths.output,
+            assetModuleFilename: 'assets/[hash][ext][query]',
             clean: true,
         },
         plugins: getPlugins(options),

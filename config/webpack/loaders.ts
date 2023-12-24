@@ -43,7 +43,12 @@ export const getLoaders = (options: typeWebpackConfigOptions) => {
     // TypeScript
     const tsLoader: webpack.RuleSetRule = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: {
+            loader: 'ts-loader',
+            options: {
+                transpileOnly: options.isDev,
+            }
+        },
         exclude: /node_modules/,
     };
 
